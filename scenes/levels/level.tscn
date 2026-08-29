@@ -1,22 +1,21 @@
 [gd_scene format=3 uid="uid://2djs84c7vgdd"]
 
 [ext_resource type="Script" uid="uid://ofjq3wflqxrd" path="res://scenes/levels/level.gd" id="1_b2cq8"]
-[ext_resource type="PackedScene" uid="uid://bswi7wfryf17x" path="res://scenes/bed/bed.tscn" id="3_d4w6o"]
+[ext_resource type="Texture2D" uid="uid://ryb0r2eunvu7" path="res://graphics/objects/gate.png" id="2_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://w8l2khf6llpe" path="res://scenes/player/player.tscn" id="4_mbbpy"]
-[ext_resource type="PackedScene" uid="uid://c7s4rd64io3j1" path="res://scenes/objects/node_2d.tscn" id="4_xb4v1"]
-[ext_resource type="PackedScene" uid="uid://bs6a6au76s7ux" path="res://scenes/enemies/drone.tscn" id="5_urvlt"]
 
 [node name="Level" type="Node2D" unique_id=1217162733]
 script = ExtResource("1_b2cq8")
 
-[node name="Bed" parent="." unique_id=2023566343 instance=ExtResource("3_d4w6o")]
-position = Vector2(828, 187)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=91556861]
 
-[node name="Toilet" parent="." unique_id=1394687681 instance=ExtResource("4_xb4v1")]
-position = Vector2(118, 129)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=288915132]
+position = Vector2(518, -367)
+polygon = PackedVector2Array(-1412, -767, -1436, 238, -1428, 555, -1401, 649, -1323, 725, -1238, 770, -367, 775, -367, 489, 483, 487, 490, 770, 1329, 775, 1428, 745, 1517, 676, 1565, 548, 1565, -66, 1551, -797, 1550, -802)
+
+[node name="Gate" type="Sprite2D" parent="StaticBody2D" unique_id=635832558]
+position = Vector2(527, -361)
+texture = ExtResource("2_b2cq8")
 
 [node name="Player" parent="." unique_id=121573245 instance=ExtResource("4_mbbpy")]
 position = Vector2(547, 522)
-
-[node name="Drone" parent="." unique_id=504154249 instance=ExtResource("5_urvlt")]
-position = Vector2(257, 528)
